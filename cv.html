@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="head"></head>
+<body>
+    <div id="header"></div>
+    <div id="contact"></div>
+    <div id="experience"></div>
+    <div id="education"></div>
+    <div id="skills"></div>
+    <div id="certifications"></div>
+    <div id="projects"></div>
+    <div id="academic"></div>
+</body>
+<script>
+    const includes = [
+        'head', 'header', 'contact', 'experience',
+        'education', 'skills', 'certifications'
+    ];
+    includes.forEach(section => {
+        fetch(`components/${section}.html`)
+            .then(res => res.text())
+            .then(html => document.getElementById(section).innerHTML = html);
+    });
+</script>
+</html>
